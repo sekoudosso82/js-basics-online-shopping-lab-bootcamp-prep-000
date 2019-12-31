@@ -1,18 +1,18 @@
 var cart = [];
 
-function getCart() {
+function getCart() 
+{
  return cart;
 }
 
-function setCart(c) {
+function setCart(c) 
+{
   cart = c;
   return cart;
 }
 
 function addToCart(item)
 {
- 
-
  var newObject = {itemName: item,itemPrice: Math.floor(Math.random() * (100 - 1 + 1)) + 1}
  cart.push(newObject);
  return `${item} has been added to your cart.`;
@@ -51,7 +51,8 @@ function viewCart()
  
 }
 
-function total() {
+function total() 
+{
   var totalPrice = 0;
   var index = 0;
   var cartLength = cart.length;
@@ -64,7 +65,8 @@ function total() {
   return totalPrice
 }
 
-function removeFromCart(item) {
+function removeFromCart(item) 
+{
   var cartLength = cart.length;
   for( var i = 0; i < cartLength; i++)
   { 
@@ -79,18 +81,19 @@ function removeFromCart(item) {
   
 }
 
-function placeOrder(cardNumber) {
-  var amount = total();
- if (typeof(cardNumber) === 'undefined')
- {
-   return `Sorry, we don't have a credit card on file for you.`
- }
- else //if (cardNumber !== null)
- {
-   // empty cart method 
-  // cart.splice(0, cart.length)
-  while(cart.length>0){ cart.pop()}
-  return `Your total cost is $${amount}, which will be charged to the card ${cardNumber}.`
- }
+function placeOrder(cardNumber) 
+{
+   var amount = total();
+   if (typeof(cardNumber) === 'undefined')
+   {
+     return `Sorry, we don't have a credit card on file for you.`
+   }
+   else //if (cardNumber !== null)
+   {
+     // empty cart method 
+    // cart.splice(0, cart.length)
+    while(cart.length>0){ cart.pop()}
+    return `Your total cost is $${amount}, which will be charged to the card ${cardNumber}.`
+   }
 }
 
