@@ -80,5 +80,21 @@ function removeFromCart(item) {
 }
 
 function placeOrder(cardNumber) {
+  var amount = total();
+ if (typeof(cardNumber) === 'undefined')
+ {
+   return `Sorry, we don't have a credit card on file for you.`
+ }
+ else //if (cardNumber !== null)
+ {
+   // empty cart method 
+  // cart.splice(0, cart.length)
+  while(cart.length>0){ cart.pop()}
+  return `Your total cost is $${amount}, which will be charged to the card ${cardNumber}.`
+ }
+}
+
+
+function placeOrder(cardNumber) {
   // write your code here
 }
