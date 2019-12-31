@@ -64,10 +64,19 @@ function total() {
   return totalPrice
 }
 
-
-
 function removeFromCart(item) {
-  // write your code here
+  var cartLength = cart.length;
+  for( var i = 0; i < cartLength; i++)
+  { 
+     if ( cart[i].itemName === item) 
+         {
+           cart.splice(i, 1); 
+           i = i-1
+           return cart;
+         }
+  }
+    return `That item is not in your cart.`;
+  
 }
 
 function placeOrder(cardNumber) {
