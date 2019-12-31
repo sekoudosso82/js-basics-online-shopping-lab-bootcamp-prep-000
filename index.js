@@ -51,11 +51,20 @@ function viewCart()
  
 }
 
-
-
 function total() {
-  // write your code here
+  var totalPrice = 0;
+  var index = 0;
+  var cartLength = cart.length;
+  
+  while( index < cartLength)
+  {
+    totalPrice = totalPrice + cart[index].itemPrice
+    index = index +1
+  }
+  return totalPrice
 }
+
+
 
 function removeFromCart(item) {
   // write your code here
